@@ -11,6 +11,17 @@ The most popular DE interview question repos on GitHub were written in 2018 to 2
 
 This bank is current. Every question reflects the way these topics are actually being asked in 2026 loops. Each question links to a sandbox where you can run the schema and submit your answer.
 
+## Related repositories
+
+This repo is the **full question bank**. The companion repos give you different ways to use the same material:
+
+- **[data-engineering-interview-handbook](https://github.com/datadriven-io/data-engineering-interview-handbook)** is the **flagship handbook** with chapters, study plans, and worked examples.
+- **[awesome-data-engineering-interviews](https://github.com/datadriven-io/awesome-data-engineering-interviews)** (plural) is the **DataDriven 75**, a focused subset for time constrained candidates.
+- **[awesome-data-engineering-interview](https://github.com/datadriven-io/awesome-data-engineering-interview)** (singular) is the **curated resource list** of books, blogs, and courses.
+- **[system-design-for-data-engineers](https://github.com/datadriven-io/system-design-for-data-engineers)** has **120 long form pipeline case studies**.
+- **[data-engineer-interview-prep](https://github.com/datadriven-io/data-engineer-interview-prep)** is an **8 week practice track** built around this question bank.
+- **[data-engineering-cheatsheet](https://github.com/datadriven-io/data-engineering-cheatsheet)** is the **night before recall reference**.
+
 ## How this is organized
 
 Five sections, one per round:
@@ -215,6 +226,44 @@ If you have a question that should be in this bank, open an issue with:
 5. The common trap
 
 The question will be reviewed and added to the bank with attribution.
+
+## Frequently asked questions
+
+### How many practice questions do I need to be ready for a data engineering interview?
+
+Roughly 100 medium and 25 hard problems across SQL, Python, schema design, and pipeline architecture. That is enough to cover every common pattern and to build the reflexes interviewers screen for. Going past that has diminishing returns. Going under it leaves gaps.
+
+### What are the most common SQL questions in a data engineering interview?
+
+Window functions (rolling averages, top N per group, gaps and islands), conditional aggregation, joins with tie breaking, and "find the second to last" style questions. Date and time bucketing with hidden timezone traps is also extremely common. The [top 25 SQL questions](#top-25-sql-questions-to-know-cold) section above has the canonical list.
+
+### What are the most common Python questions in a data engineering interview?
+
+Batching iterables, hash partitioning, sessionization, dedup with tie breaking, interval merging, and stateful streaming aggregation. These are not LeetCode style questions. They are the patterns that show up in real production data pipelines. See [Python patterns to know](#python-patterns-to-know).
+
+### Are these real questions from real interviews?
+
+The questions in this bank are inspired by patterns reported by candidates from real interview loops at top tech companies. Specific schemas, prompts, and edge cases are written from scratch so the bank stays free to share and remix. The spirit and difficulty of each question matches what you will see in the wild.
+
+### How do I know if my answer is correct?
+
+Every question links to a runnable sandbox that grades your answer against test cases. You can iterate without leaving the browser. No local setup required.
+
+### Are these data engineering interview questions updated for 2026?
+
+Yes. The bank reflects the way DE topics are actually being asked in 2026 loops, including the lakehouse and dbt era. Most popular DE interview question repos on GitHub were written between 2018 and 2021 and predate the current generation of system design rounds.
+
+### Is the question bank free?
+
+Yes. Browser sandboxes are free to use. The bank itself is CC BY-SA 4.0.
+
+### How is this different from LeetCode or StrataScratch?
+
+LeetCode is algorithm focused and not data engineer flavored. StrataScratch is more analyst flavored. This bank is built specifically around the patterns that show up in data engineering interviews, with a higher proportion of schema design, pipeline architecture, and DE specific Python patterns.
+
+### Should I do these questions in a specific order?
+
+Yes. Start with the [SQL fundamentals](#sql-questions-by-topic) (joins, aggregating, filtering, dates), then [window functions](https://datadriven.io/sql-window-functions-practice), then [Python patterns](#python-patterns-to-know), then [schema design](#schema-design-questions), then [pipeline architecture](#pipeline-architecture-questions). This order matches the difficulty curve of a typical interview loop.
 
 ## License
 
