@@ -1,270 +1,126 @@
-# Data Engineering Interview Questions
+<h1 align="center">Data Engineering Interview Questions</h1>
 
-> A 2026 question bank for data engineering interviews. Organized by topic. Every question links to a runnable browser sandbox.
+<p align="center">
+  1418 tagged practice problems for data engineering interviews. SQL, Python, schema design, pipeline architecture. Each problem links to a runnable browser sandbox.
+</p>
 
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
-[![Last updated](https://img.shields.io/badge/updated-2026-blue.svg)](#)
+<p align="center">
+  <a href="https://github.com/datadriven-io/data-engineering-interview-questions/stargazers"><img src="https://img.shields.io/github/stars/datadriven-io/data-engineering-interview-questions?style=flat&color=ffd33d" alt="Stars"></a>
+  <a href="https://github.com/datadriven-io/data-engineering-interview-questions/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--SA%204.0-blue.svg" alt="License"></a>
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome">
+  <a href="https://datadriven.io"><img src="https://img.shields.io/badge/sandbox-datadriven.io-9333ea.svg" alt="Sandbox"></a>
+</p>
 
-## Why a 2026 edition
+<p align="center">
+  <a href="#sql-854-problems">SQL</a> ·
+  <a href="#python-388-problems">Python</a> ·
+  <a href="#schema-design-56-problems">Schema design</a> ·
+  <a href="#pipeline-architecture-120-problems">Pipeline architecture</a> ·
+  <a href="#companion-repos">Companion repos</a>
+</p>
 
-The most popular DE interview question repos on GitHub were written in 2018 to 2021. They predate dbt going mainstream, predate Iceberg and Delta, predate the lakehouse pattern, predate the streaming default, and predate the current generation of system design rounds. They are still useful for fundamentals, but they will not prepare you for a 2026 onsite at Netflix, Stripe, Databricks, or Snowflake.
+---
 
-This bank is current. Every question reflects the way these topics are actually being asked in 2026 loops. Each question links to a sandbox where you can run the schema and submit your answer.
+| Section | Count | Browse |
+|---|---:|---|
+| SQL | 854 | [datadriven.io/sql-interview-questions](https://datadriven.io/sql-interview-questions) |
+| Python | 388 | [datadriven.io/python-interview-questions](https://datadriven.io/python-interview-questions) |
+| Schema design | 56 | [datadriven.io/data-modeling-interview-questions](https://datadriven.io/data-modeling-interview-questions) |
+| Pipeline architecture | 120 | [datadriven.io/data-pipeline-interview-questions](https://datadriven.io/data-pipeline-interview-questions) |
+| **Total** | **1418** | |
 
-## Related repositories
+Every problem runs in a browser sandbox with the schema preloaded. No local setup. Each question is tagged with difficulty, what it tests, and the common trap.
 
-This repo is the **full question bank**. The companion repos give you different ways to use the same material:
+## SQL (854 problems)
 
-- **[data-engineering-interview-handbook](https://github.com/datadriven-io/data-engineering-interview-handbook)** is the **flagship handbook** with chapters, study plans, and worked examples.
-- **[awesome-data-engineering-interviews](https://github.com/datadriven-io/awesome-data-engineering-interviews)** (plural) is the **DataDriven 75**, a focused subset for time constrained candidates.
-- **[awesome-data-engineering-interview](https://github.com/datadriven-io/awesome-data-engineering-interview)** (singular) is the **curated resource list** of books, blogs, and courses.
-- **[system-design-for-data-engineers](https://github.com/datadriven-io/system-design-for-data-engineers)** has **120 long form pipeline case studies**.
-- **[data-engineer-interview-prep](https://github.com/datadriven-io/data-engineer-interview-prep)** is an **8 week practice track** built around this question bank.
-- **[data-engineering-cheatsheet](https://github.com/datadriven-io/data-engineering-cheatsheet)** is the **night before recall reference**.
+Topics: joins, aggregating, window functions, filtering, dates, conditional aggregation, CTEs, performance reasoning. Topic browser at [datadriven.io/sql-interview-questions](https://datadriven.io/sql-interview-questions).
 
-## How this is organized
+### Top problems to know cold
 
-Five sections, one per round:
-
-1. **SQL** (854 questions). What you will see in screens and onsites.
-2. **Python** (388 questions). DE flavored, not LeetCode.
-3. **Schema design** (56 questions). Whiteboard ERDs.
-4. **Pipeline architecture** (120 questions). End to end design.
-5. **Behavioral** (50 questions). Story bank prompts.
-
-Each question is tagged with:
-
-- **Difficulty.** Easy, medium, hard.
-- **What it tests.** The underlying skill.
-- **Common trap.** The mistake that costs candidates the offer.
-- **Sandbox link.** A runnable environment with the schema preloaded.
-
-## SQL questions
-
-The full SQL set with filters by difficulty and topic is browseable at <https://datadriven.io/sql-interview-questions>.
-
-### Top 25 SQL questions to know cold
-
-| # | Question | Difficulty | Tests | Common trap |
-|---|---|---|---|---|
-| 1 | [10 Lowest Uptime Services](https://datadriven.io/interview/10_lowest_uptime_services) | Easy | TOP N with ties | Using `LIMIT 10` and silently dropping ties |
-| 2 | [2FA Confirmation Rate](https://datadriven.io/interview/2fa_confirmation_rate) | Easy | Conditional aggregation | Dividing by zero |
-| 3 | [2nd Most Common Content Type](https://datadriven.io/interview/2nd_most_common_content_type) | Easy | Tie breaking | `LIMIT 1 OFFSET 1` ignoring ties at first place |
-| 4 | [30 Day Page View Counts](https://datadriven.io/interview/30_day_page_view_counts) | Easy | Date filtering | Timezone boundary errors |
-| 5 | [7 Day Onboarding Conversion](https://datadriven.io/interview/7_day_onboarding_conversion) | Medium | Funnel analysis | Anchoring on the wrong event |
-| 6 | [7 Check Rolling Average](https://datadriven.io/interview/7_check_rolling_average) | Medium | Rolling window | `ROWS` vs `RANGE` when days are missing |
-| 7 | [Active Users by Month](https://datadriven.io/interview/active_users_by_month) | Medium | Cohort logic | Double counting users active in multiple months |
-
-The full top 100 list is at <https://datadriven.io/sql-interview-questions>.
-
-### SQL questions by topic
-
-- **[Window functions](https://datadriven.io/sql-window-functions-practice)**. The single highest leverage SQL topic. Every senior loop has at least one.
-- **[Joins](https://datadriven.io/learn/joins-advanced)**. Inner, left, full, semi, anti, lateral, inequality.
-- **[Aggregating](https://datadriven.io/learn/aggregating-advanced)**. `GROUP BY`, grouping sets, rollups, conditional aggregation.
-- **[Date and time](https://datadriven.io/sql-tutorial)**. Almost every interview has a "compute by week" question with a hidden timezone trap.
-- **[Performance reasoning](https://datadriven.io/sql-query-optimization)**. EXPLAIN plans, partitioning, sort keys.
-
-### What SQL questions actually test
-
-Senior DE SQL screens are not really about SQL. They test four things:
-
-1. **Reflexes.** Can you write `LAG` from memory? Can you write a self join without thinking?
-2. **Reading queries.** Can you find the bug in a query someone else wrote?
-3. **Tradeoffs.** When would you use a CTE vs a subquery vs a temp table?
-4. **Data quality.** When you see a question, can you spot when it is secretly a data quality problem?
-
-If you have any one of these gaps, work it directly. The lessons at <https://datadriven.io/learn> are organized to do exactly that.
-
-## Python questions
-
-The full Python set is at <https://datadriven.io/python-interview-questions>.
-
-### Top 15 Python questions to know cold
-
-| # | Question | Difficulty | Pattern |
+| Problem | Difficulty | Tests | Trap |
 |---|---|---|---|
-| 1 | [Batch Records](https://datadriven.io/interview/batch_records) | Easy | Chunking iterables |
-| 2 | [Column Sum](https://datadriven.io/interview/column_sum) | Easy | Dict aggregation |
-| 3 | [Activity Time Ledger](https://datadriven.io/interview/activity_time_ledger) | Medium | Interval merging |
-| 4 | [Batch Partitioner](https://datadriven.io/interview/batch_partitioner) | Medium | Hash bucketing |
-| 5 | [Batch With Metadata](https://datadriven.io/interview/batch_with_metadata) | Medium | Stateful iteration |
-| 6 | [Caesar Shift Check](https://datadriven.io/interview/caesar_shift_check) | Hard | String transforms |
-| 7 | [Character Occurrence Map](https://datadriven.io/interview/character_occurrence_map) | Hard | Counting tradeoffs |
+| [10 Lowest Uptime Services](https://datadriven.io/interview/10_lowest_uptime_services) | Easy | TOP N with ties | `LIMIT 10` drops tied rows |
+| [2FA Confirmation Rate](https://datadriven.io/interview/2fa_confirmation_rate) | Easy | Conditional aggregation | Divide by zero |
+| [2nd Most Common Content Type](https://datadriven.io/interview/2nd_most_common_content_type) | Easy | Tie breaking | `LIMIT 1 OFFSET 1` ignores ties |
+| [30 Day Page View Counts](https://datadriven.io/interview/30_day_page_view_counts) | Easy | Date filtering | Timezone boundaries |
+| [7 Day Onboarding Conversion](https://datadriven.io/interview/7_day_onboarding_conversion) | Medium | Funnel analysis | Anchoring on the wrong event |
+| [7 Check Rolling Average](https://datadriven.io/interview/7_check_rolling_average) | Medium | Rolling window | `ROWS` vs `RANGE` when days are missing |
+| [Active Users by Month](https://datadriven.io/interview/active_users_by_month) | Hard | Cohort logic | Double counting users active in multiple months |
 
-### Python patterns to know
+### Window functions drill
 
-DE Python interviews almost never ask LeetCode style algorithms. They ask patterns. Memorize these:
+Window functions appear in most senior DE SQL screens. Timed practice at [datadriven.io/sql-window-functions-practice](https://datadriven.io/sql-window-functions-practice).
 
-1. **Chunking.** Split an iterable into batches of N.
-2. **Hash partitioning.** Bucket records by `hash(key) % N`.
-3. **Interval merging.** Merge overlapping time ranges.
-4. **Sessionization.** Group events into sessions based on inactivity gap.
-5. **Dedup with tie breaking.** First seen, last seen, or by priority.
-6. **Streaming aggregation.** Maintain running counts in a single pass.
-7. **Retries with backoff.** Common in API integration questions.
-8. **Schema evolution.** Add a new field to a record stream without breaking consumers.
+## Python (388 problems)
 
-A walkthrough of each pattern with code lives at <https://datadriven.io/python-for-data-engineering>.
+DE Python is data manipulation, not LeetCode. Common patterns: chunking, sessionization, hash partitioning, interval merging, dedup with tie breaking, streaming aggregation, retries with backoff, schema evolution. Browse at [datadriven.io/python-interview-questions](https://datadriven.io/python-interview-questions).
 
-## Schema design questions
+### Top problems
 
-The full schema design set (56 problems with worked solutions) is at <https://datadriven.io/data-modeling-interview-questions>.
-
-### Top 15 schema design questions
-
-| # | Question | Tests |
+| Problem | Difficulty | Pattern |
 |---|---|---|
-| 1 | [A/B Experiment Assignment Schema](https://datadriven.io/interview/a_b_experiment_assignment_schema) | SCD type 2, sticky bucketing |
-| 2 | [Customer Address History](https://datadriven.io/interview/customer_address_history) | SCD type 2, effective date semantics |
-| 3 | [Insurance Claims Lifecycle](https://datadriven.io/interview/insurance_claims_lifecycle) | State machine modeling |
-| 4 | [Clickstream and Session Schema](https://datadriven.io/interview/clickstream_and_session_schema) | Sessionization, late events |
-| 5 | [E Commerce Supply Chain Tracking](https://datadriven.io/interview/e_commerce_supply_chain_tracking) | Multi entity tracking |
-| 6 | [Loan Management Schema](https://datadriven.io/interview/loan_management_schema) | Bridge tables, party roles |
-| 7 | [Cloud File Storage Metadata Schema](https://datadriven.io/interview/cloud_file_storage_metadata_schema) | Recursive hierarchies |
-| 8 | [Financial Trading Warehouse](https://datadriven.io/interview/financial_trading_warehouse) | Time series, late arriving facts |
-| 9 | [Content Engagement Data Model](https://datadriven.io/interview/content_engagement_data_model) | Fact table grain |
-| 10 | [B2B Invoicing Data Model](https://datadriven.io/interview/b2b_invoicing_data_model) | Many to many with attributes |
-| 11 | [Event Ticketing System Data Model](https://datadriven.io/interview/event_ticketing_system_data_model) | Inventory, reservations |
-| 12 | [Edtech Classroom Engagement Schema](https://datadriven.io/interview/edtech_classroom_engagement_schema) | Hierarchical dimensions |
-| 13 | [Fitness Studio Membership Schema](https://datadriven.io/interview/fitness_studio_membership_schema) | Subscription state |
-| 14 | [Housing Marketplace Analytics](https://datadriven.io/interview/housing_marketplace_analytics) | Two sided marketplace |
-| 15 | [Livestream Analytics Schema](https://datadriven.io/interview/livestream_analytics_schema) | Real time fact rollups |
+| [Batch Records](https://datadriven.io/interview/batch_records) | Easy | Chunking iterables |
+| [Column Sum](https://datadriven.io/interview/column_sum) | Easy | Dict aggregation |
+| [Activity Time Ledger](https://datadriven.io/interview/activity_time_ledger) | Medium | Interval merging |
+| [Batch Partitioner](https://datadriven.io/interview/batch_partitioner) | Medium | Hash bucketing |
+| [Batch With Metadata](https://datadriven.io/interview/batch_with_metadata) | Medium | Stateful iteration |
+| [Caesar Shift Check](https://datadriven.io/interview/caesar_shift_check) | Hard | String transforms |
+| [Character Occurrence Map](https://datadriven.io/interview/character_occurrence_map) | Hard | Counting tradeoffs |
 
-### Schema design rubric
+## Schema design (56 problems)
 
-What interviewers are scoring on, in order:
+Senior loops are won here. Reward: pick the right grain for fact tables, defend an SCD type, validate the schema with sample queries. Browse at [datadriven.io/data-modeling-interview-questions](https://datadriven.io/data-modeling-interview-questions).
 
-1. **Did you ask about the read pattern?** Schemas exist to serve queries. If you do not know the query, you cannot design the schema.
-2. **Did you pick the right grain for fact tables?**
-3. **Did you handle history correctly?** SCD type 1, 2, or 6, and you can defend the choice.
-4. **Did you talk about indexes and partitioning?** Even if not asked.
-5. **Did you sketch sample queries?** This is the single fastest way to validate a schema.
+### Top problems
 
-A longer treatment of the rubric is at <https://datadriven.io/data-modeling>.
-
-## Pipeline architecture questions
-
-The full set of 120 case studies is at <https://datadriven.io/data-pipeline-interview-questions>.
-
-### Top 12 pipeline questions
-
-| # | Question | Domain |
-|---|---|---|
-| 1 | [Card Transaction Streaming Pipeline](https://datadriven.io/interview/card_transaction_streaming_pipeline) | Real time, exactly once |
-| 2 | [Cellular Connectivity and App Log Data Warehouse](https://datadriven.io/interview/cellular_connectivity_and_app_log_data_warehouse) | High cardinality |
-| 3 | [AWS Pipeline Auto Scaling for Variable Volume](https://datadriven.io/interview/aws_pipeline_auto_scaling_for_variable_volume) | Cost optimization |
-| 4 | [Connected Vehicle Telemetry Pipeline](https://datadriven.io/interview/connected_vehicle_telemetry_pipeline_with_iac_deployment) | High volume IoT |
-| 5 | [Capital Markets Intraday Risk Pipeline](https://datadriven.io/interview/capital_markets_intraday_risk_pipeline_with_bcbs_239_lineage) | Regulatory lineage |
-| 6 | [Database Replication and Schema Normalization Pipeline](https://datadriven.io/interview/database_replication_and_schema_normalization_pipeline) | CDC |
-| 7 | [Clickstream Pipeline for Apple Product Analytics](https://datadriven.io/interview/clickstream_pipeline_for_apple_product_analytics) | Event ingestion |
-| 8 | [Cost Optimized Clickstream Data Lake](https://datadriven.io/interview/cost_optimized_clickstream_data_lake) | Storage tradeoffs |
-| 9 | [Databricks Pipeline with Spark Performance Optimization](https://datadriven.io/interview/databricks_pipeline_with_spark_performance_optimization) | Spark internals |
-| 10 | [E Commerce Platform Analytics Pipeline](https://datadriven.io/interview/e_commerce_platform_analytics_pipeline_orders_to_warehouse) | Orders to warehouse |
-| 11 | [Event Driven Insurance Pipeline](https://datadriven.io/interview/event_driven_insurance_pipeline_with_async_claim_processing) | Async processing |
-| 12 | [Document Ingestion and Text Extraction Pipeline](https://datadriven.io/interview/document_ingestion_and_text_extraction_pipeline) | Unstructured data |
-
-### Pipeline design framework
-
-Use this framework on every pipeline question:
-
-1. **Clarify.** Volume per second, latency target, freshness tolerance.
-2. **Pick batch vs stream.** Justify with the numbers from step 1.
-3. **Pick storage.** Lake, warehouse, lakehouse, OLAP store, kv store.
-4. **Sketch topology.** Source, ingest, transform, serve.
-5. **Failure modes.** Backfills, replays, late data, dedup, schema evolution.
-6. **Cost and operations.** Steady state spend, on call burden.
-
-A long form treatment is at <https://datadriven.io/data-engineering-system-design>.
-
-## Behavioral questions
-
-The full set of 50 questions with model answers is at <https://datadriven.io/behavioral-interview-questions>.
-
-The themes you should have stories for:
-
-1. Owned an ambiguous problem end to end
-2. Disagreed with a stakeholder and changed their mind
-3. Broke production and recovered
-4. Mentored someone or raised the team bar
-5. Killed a project that was not worth doing
-6. Shipped fast then cleaned up
-7. Worked across teams or with non technical stakeholders
-8. Made a tradeoff between scope, quality, and time
-
-## Company specific questions
-
-DE loops differ by company. Each guide includes loop structure, leveling, and a curated subset of questions from this bank that map to that company's style.
-
-| Company | Guide |
+| Problem | Tests |
 |---|---|
-| Netflix | <https://datadriven.io/companies/netflix/interview> |
-| Uber | <https://datadriven.io/companies/uber/interview> |
-| Amazon | <https://datadriven.io/companies/amazon/interview> |
-| Google | <https://datadriven.io/companies/google/interview> |
-| Meta | <https://datadriven.io/companies/meta/interview> |
+| [A/B Experiment Assignment Schema](https://datadriven.io/interview/a_b_experiment_assignment_schema) | SCD type 2, sticky bucketing |
+| [Customer Address History](https://datadriven.io/interview/customer_address_history) | Effective dates, history preservation |
+| [Insurance Claims Lifecycle](https://datadriven.io/interview/insurance_claims_lifecycle) | State machine modeling |
+| [Clickstream and Session Schema](https://datadriven.io/interview/clickstream_and_session_schema) | Sessionization, late events |
+| [E Commerce Supply Chain Tracking](https://datadriven.io/interview/e_commerce_supply_chain_tracking) | Multi entity tracking |
+| [Loan Management Schema](https://datadriven.io/interview/loan_management_schema) | Bridge tables, party roles |
+| [Cloud File Storage Metadata Schema](https://datadriven.io/interview/cloud_file_storage_metadata_schema) | Recursive hierarchies |
+| [Financial Trading Warehouse](https://datadriven.io/interview/financial_trading_warehouse) | Time series, late arriving facts |
+| [Content Engagement Data Model](https://datadriven.io/interview/content_engagement_data_model) | Fact table grain |
+| [B2B Invoicing Data Model](https://datadriven.io/interview/b2b_invoicing_data_model) | Many to many with attributes |
 
-## Difficulty distribution
+## Pipeline architecture (120 problems)
 
-| Section | Easy | Medium | Hard | Total |
-|---|---|---|---|---|
-| SQL | ~340 | ~390 | ~120 | 854 |
-| Python | ~150 | ~180 | ~60 | 388 |
-| Schema design | ~10 | ~30 | ~16 | 56 |
-| Pipeline architecture | ~20 | ~70 | ~30 | 120 |
+End to end design questions. Use the eight beat framework on every one. Browse at [datadriven.io/data-pipeline-interview-questions](https://datadriven.io/data-pipeline-interview-questions).
 
-If you finish 100 medium and 25 hard problems across the four sections, you are ready for any senior DE loop.
+### Top case studies
+
+| Case study | Domain |
+|---|---|
+| [Card Transaction Streaming Pipeline](https://datadriven.io/interview/card_transaction_streaming_pipeline) | Real time, exactly once |
+| [Cellular Connectivity and App Log Data Warehouse](https://datadriven.io/interview/cellular_connectivity_and_app_log_data_warehouse) | High cardinality |
+| [AWS Pipeline Auto Scaling for Variable Volume](https://datadriven.io/interview/aws_pipeline_auto_scaling_for_variable_volume) | Cost optimization |
+| [Connected Vehicle Telemetry Pipeline](https://datadriven.io/interview/connected_vehicle_telemetry_pipeline_with_iac_deployment) | High volume IoT |
+| [Capital Markets Intraday Risk Pipeline](https://datadriven.io/interview/capital_markets_intraday_risk_pipeline_with_bcbs_239_lineage) | Regulatory lineage |
+| [Database Replication and Schema Normalization Pipeline](https://datadriven.io/interview/database_replication_and_schema_normalization_pipeline) | CDC |
+| [Cost Optimized Clickstream Data Lake](https://datadriven.io/interview/cost_optimized_clickstream_data_lake) | Storage tradeoffs |
+| [Databricks Pipeline with Spark Performance Optimization](https://datadriven.io/interview/databricks_pipeline_with_spark_performance_optimization) | Spark internals |
+
+## How many problems to be ready
+
+About 100 medium and 25 hard, distributed across the four sections. Past that, returns diminish. Below that, gaps remain.
+
+## Companion repos
+
+- [data-engineering-interview-handbook](https://github.com/datadriven-io/data-engineering-interview-handbook). The flagship handbook with chapter by chapter coverage.
+- [data-engineer-interview-handbook](https://github.com/datadriven-io/data-engineer-interview-handbook). 7 day sprint version.
+- [awesome-data-engineering-interviews](https://github.com/datadriven-io/awesome-data-engineering-interviews). The DataDriven 75 focused subset.
+- [awesome-data-engineering-interview](https://github.com/datadriven-io/awesome-data-engineering-interview). Curated resource list.
+- [system-design-for-data-engineers](https://github.com/datadriven-io/system-design-for-data-engineers). 120 long form pipeline case studies.
+- [data-engineer-interview-prep](https://github.com/datadriven-io/data-engineer-interview-prep). 8 week structured practice schedule.
+- [data-engineering-cheatsheet](https://github.com/datadriven-io/data-engineering-cheatsheet). One page recall reference.
 
 ## Contributing
 
-If you have a question that should be in this bank, open an issue with:
-
-1. The question text
-2. The schema or input data
-3. The expected output
-4. What it tests
-5. The common trap
-
-The question will be reviewed and added to the bank with attribution.
-
-## Frequently asked questions
-
-### How many practice questions do I need to be ready for a data engineering interview?
-
-Roughly 100 medium and 25 hard problems across SQL, Python, schema design, and pipeline architecture. That is enough to cover every common pattern and to build the reflexes interviewers screen for. Going past that has diminishing returns. Going under it leaves gaps.
-
-### What are the most common SQL questions in a data engineering interview?
-
-Window functions (rolling averages, top N per group, gaps and islands), conditional aggregation, joins with tie breaking, and "find the second to last" style questions. Date and time bucketing with hidden timezone traps is also extremely common. The [top 25 SQL questions](#top-25-sql-questions-to-know-cold) section above has the canonical list.
-
-### What are the most common Python questions in a data engineering interview?
-
-Batching iterables, hash partitioning, sessionization, dedup with tie breaking, interval merging, and stateful streaming aggregation. These are not LeetCode style questions. They are the patterns that show up in real production data pipelines. See [Python patterns to know](#python-patterns-to-know).
-
-### Are these real questions from real interviews?
-
-The questions in this bank are inspired by patterns reported by candidates from real interview loops at top tech companies. Specific schemas, prompts, and edge cases are written from scratch so the bank stays free to share and remix. The spirit and difficulty of each question matches what you will see in the wild.
-
-### How do I know if my answer is correct?
-
-Every question links to a runnable sandbox that grades your answer against test cases. You can iterate without leaving the browser. No local setup required.
-
-### Are these data engineering interview questions updated for 2026?
-
-Yes. The bank reflects the way DE topics are actually being asked in 2026 loops, including the lakehouse and dbt era. Most popular DE interview question repos on GitHub were written between 2018 and 2021 and predate the current generation of system design rounds.
-
-### Is the question bank free?
-
-Yes. Browser sandboxes are free to use. The bank itself is CC BY-SA 4.0.
-
-### How is this different from LeetCode or StrataScratch?
-
-LeetCode is algorithm focused and not data engineer flavored. StrataScratch is more analyst flavored. This bank is built specifically around the patterns that show up in data engineering interviews, with a higher proportion of schema design, pipeline architecture, and DE specific Python patterns.
-
-### Should I do these questions in a specific order?
-
-Yes. Start with the [SQL fundamentals](#sql-questions-by-topic) (joins, aggregating, filtering, dates), then [window functions](https://datadriven.io/sql-window-functions-practice), then [Python patterns](#python-patterns-to-know), then [schema design](#schema-design-questions), then [pipeline architecture](#pipeline-architecture-questions). This order matches the difficulty curve of a typical interview loop.
+Open an issue with: question text, schema, expected output, what it tests, the common trap. Reviewed and added with attribution.
 
 ## License
 
-CC BY-SA 4.0. Question environments are hosted at <https://datadriven.io>.
+[CC BY-SA 4.0](LICENSE). Sandboxes hosted at [datadriven.io](https://datadriven.io).
