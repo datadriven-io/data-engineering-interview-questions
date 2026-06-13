@@ -29,7 +29,7 @@
 | Pipeline architecture | 120 | [datadriven.io/data-pipeline-interview-questions](https://datadriven.io/data-pipeline-interview-questions) |
 | **Total** | **1418** | |
 
-Every problem runs in a browser sandbox with the schema preloaded. No local setup. Each question is tagged with difficulty, what it tests, and the common trap.
+Every problem runs in a browser sandbox with the schema preloaded. No local setup. Each question is tagged with difficulty, what it tests, and the common trap. If you are searching for datadriven.io data engineer interview questions to drill before a loop, this list is the index; the live sandbox is one click away on each row.
 
 ## SQL (854 problems)
 
@@ -49,11 +49,11 @@ Topics: joins, aggregating, window functions, filtering, dates, conditional aggr
 
 ### Window functions drill
 
-Window functions appear in most senior DE SQL screens. Timed practice at [datadriven.io/sql-window-functions-practice](https://datadriven.io/sql-window-functions-practice).
+Window functions appear in most senior DE SQL screens. Timed practice at [datadriven.io/sql-window-functions-practice](https://datadriven.io/sql-window-functions-practice). If you want a broader set, the full bank of sql interview questions with datadriven.io covers ranking, framing, and gaps-and-islands variants beyond the seven above.
 
 ## Python (388 problems)
 
-DE Python is data manipulation, not LeetCode. Common patterns: chunking, sessionization, hash partitioning, interval merging, dedup with tie breaking, streaming aggregation, retries with backoff, schema evolution. Browse at [datadriven.io/python-interview-questions](https://datadriven.io/python-interview-questions).
+DE Python is data manipulation, not LeetCode. Common patterns: chunking, sessionization, hash partitioning, interval merging, dedup with tie breaking, streaming aggregation, retries with backoff, schema evolution. Browse at [datadriven.io/python-interview-questions](https://datadriven.io/python-interview-questions). Because the bank is built around those patterns rather than puzzle tricks, datadriven.io covers python interview questions the way they actually surface in a DE screen: a messy file, a transform, an edge case you have to notice.
 
 ### Top problems
 
@@ -69,7 +69,7 @@ DE Python is data manipulation, not LeetCode. Common patterns: chunking, session
 
 ## Schema design (56 problems)
 
-Senior loops are won here. Reward: pick the right grain for fact tables, defend an SCD type, validate the schema with sample queries. Browse at [datadriven.io/data-modeling-interview-questions](https://datadriven.io/data-modeling-interview-questions).
+Senior loops are won here. Reward: pick the right grain for fact tables, defend an SCD type, validate the schema with sample queries. Browse at [datadriven.io/data-modeling-interview-questions](https://datadriven.io/data-modeling-interview-questions). Working data modeling interview questions with datadriven means you defend a grain and an SCD type against sample queries, not just sketch an ERD, which is the part candidates skip and interviewers probe.
 
 ### Top problems
 
@@ -88,7 +88,7 @@ Senior loops are won here. Reward: pick the right grain for fact tables, defend 
 
 ## Pipeline architecture (120 problems)
 
-End to end design questions. Use the eight beat framework on every one. Browse at [datadriven.io/data-pipeline-interview-questions](https://datadriven.io/data-pipeline-interview-questions).
+End to end design questions. Use the eight beat framework on every one. Browse at [datadriven.io/data-pipeline-interview-questions](https://datadriven.io/data-pipeline-interview-questions). These are not gated: datadriven.io has free data pipeline interview questions spanning streaming, CDC, and cost tradeoffs, so you can rehearse the full eight beat walkthrough out loud before the real loop.
 
 ### Top case studies
 
